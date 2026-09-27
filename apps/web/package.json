@@ -1,0 +1,40 @@
+{
+  "name": "@catalog/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src",
+    "typecheck": "vue-tsc -b --noEmit",
+    "package": "pnpm build && pnpm pack --pack-destination ../../artifacts/web",
+    "clean": "rimraf dist coverage"
+  },
+  "dependencies": {
+    "@catalog/contracts": "workspace:*",
+    "axios": "^1.20.0",
+    "pinia": "^4.0.3",
+    "vue": "^3.5.43",
+    "vue-router": "^5.3.1"
+  },
+  "devDependencies": {
+    "@catalog/eslint-config": "workspace:*",
+    "@catalog/typescript-config": "workspace:*",
+    "@types/node": "24.10.0",
+    "@vitejs/plugin-vue": "^6.0.9",
+    "eslint": "^10.11.0",
+    "rimraf": "^6.1.3",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.1",
+    "vue-tsc": "^3.2.5"
+  },
+  "files": [
+    "dist",
+    "Dockerfile",
+    "nginx.conf",
+    "README.md",
+    ".env.example"
+  ]
+}

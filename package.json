@@ -1,0 +1,34 @@
+{
+  "name": "catalog-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.17.0",
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm run build:contracts && turbo run dev --parallel",
+    "dev:web": "pnpm run build:contracts && pnpm --filter @catalog/web dev",
+    "dev:api": "pnpm run build:contracts && pnpm --filter @catalog/api dev",
+    "build": "turbo run build",
+    "build:web": "pnpm --filter @catalog/web build",
+    "build:api": "pnpm --filter @catalog/api build",
+    "build:contracts": "pnpm --filter @catalog/contracts build",
+    "lint": "turbo run lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean && pnpm exec rimraf node_modules",
+    "package:web": "pnpm --filter @catalog/web package",
+    "package:api": "pnpm --filter @catalog/api package"
+  },
+  "devDependencies": {
+    "@catalog/eslint-config": "workspace:*",
+    "@catalog/typescript-config": "workspace:*",
+    "eslint": "^10.11.0",
+    "prettier": "^3.9.9",
+    "rimraf": "^6.1.3",
+    "turbo": "^2.11.4"
+  }
+}
