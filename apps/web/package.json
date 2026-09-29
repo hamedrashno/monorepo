@@ -32,8 +32,6 @@
   },
   "files": [
     "dist",
-    "Dockerfile",
-    "nginx.conf",
     "README.md",
     ".env.example"
   ]

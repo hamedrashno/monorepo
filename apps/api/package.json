@@ -38,7 +38,6 @@
   },
   "files": [
     "dist",
-    "Dockerfile",
     "README.md",
     ".env.example"
   ]
